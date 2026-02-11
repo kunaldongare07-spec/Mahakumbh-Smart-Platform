@@ -1,0 +1,80 @@
+<%- include("partials/header", { title: "Your Personalized Plan" }) %>
+
+<section class="page-hero">
+  <h1>Your Mahakumbh Journey Plan</h1>
+</section>
+<p><strong>Admin Advisory:</strong> <%= adminNote %></p>
+
+
+<section class="plan-summary">
+
+  <h3>Visitor Details</h3>
+  <p><strong>Name:</strong> <%= name %></p>
+  <p><strong>Age:</strong> <%= age %></p>
+  <p><strong>Gender:</strong> <%= gender %></p>
+  <p><strong>Traveling From:</strong> <%= fromCity %></p>
+  <p><strong>Date of Visit:</strong> <%= travelDate %></p>
+
+  <hr>
+
+  <h3>Visit Preferences</h3>
+  <p><strong>Places:</strong> <%= place %></p>
+  <p><strong>Temple:</strong> <%= temple || "Not specific" %></p>
+  <p><strong>Activity:</strong> <%= activity %></p>
+
+  <hr>
+
+  <h3>System Recommendations</h3>
+  <p><strong>Expected Crowd Level:</strong> <%= crowdLevel %></p>
+  <p><strong>Route Guidance:</strong> <%= routeAdvice %></p>
+  <p><strong>Time Advisory:</strong> <%= timeAdvice %></p>
+
+</section>
+<% if (qrCode) { %>
+  <section class="qr-section">
+    <h3>📱 Access Your Plan Anytime</h3>
+    <p>Scan this QR code to reopen your Smart Journey Plan</p>
+
+    <img src="<%= qrCode %>" alt="Smart Plan QR Code" />
+
+    <p class="qr-note">
+      Useful in low-network areas during Mahakumbh
+    </p>
+  </section>
+<% } %>
+
+
+<section class="next-steps">
+  <p>
+    This plan is generated to help you experience Mahakumbh safely and peacefully.
+    Please follow official advisories during your visit.
+  </p>
+</section>
+
+<% if (basicAccommodation) { %>
+  <section class="plan-section">
+    <h3>Accommodation Preferences</h3>
+    <p><strong>Name:</strong> <%= basicAccommodation.name %></p>
+    <p><strong>Bathing Slot:</strong> <%= basicAccommodation.bathingSlot %></p>
+    <p><strong>Accommodation Type:</strong> <%= basicAccommodation.accommodationType %></p>
+    <p><strong>Stay Duration:</strong> <%= basicAccommodation.stayDays %> days</p>
+  </section>
+<% } %>
+
+<% if (selectedGhat) { %>
+<section class="plan-card">
+  <h3>🌊 Shahi Snan Ghat Plan</h3>
+
+  <p><strong>Selected Ghat:</strong> <%= selectedGhat.ghatName %></p>
+  <p><strong>Crowd Level:</strong> <%= selectedGhat.crowdLevel %></p>
+  <p><strong>Recommended Time:</strong> <%= selectedGhat.recommendedTime %></p>
+
+  <p class="note">
+    Please follow official instructions and arrive before the recommended slot.
+  </p>
+</section>
+<% } %>
+
+
+
+<%- include("partials/footer") %>

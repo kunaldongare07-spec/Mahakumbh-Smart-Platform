@@ -1,0 +1,107 @@
+<%- include("partials/header", { title }) %>
+
+<section class="page-hero">
+  <h1>Choose Your Accommodation</h1>
+  <p>
+    Select a comfortable stay based on budget, distance, and facilities.
+    All prices shown are for 24 hours.
+  </p>
+</section>
+
+<section class="listing-container">
+
+  <!-- Government Tent -->
+  <div class="listing-card">
+    <div class="listing-info">
+      <h3>Government Tent City</h3>
+      <p class="type">Type: Tent Accommodation</p>
+      <p class="rating">⭐⭐⭐⭐</p>
+      <ul>
+        <li>✔ Near bathing ghats</li>
+        <li>✔ Government managed</li>
+        <li>✔ Security & medical help</li>
+        <li>✔ Shared washrooms</li>
+      </ul>
+    </div>
+
+    <form method="POST" action="/booking/accommodation/select" class="listing-action">
+      <input type="hidden" name="name" value="Government Tent City">
+      <input type="hidden" name="type" value="Tent Accommodation">
+      <input type="hidden" name="price" value="1200">
+      <input type="hidden" name="distance" value="Near bathing ghats">
+      <button type="submit" class="primary-btn">Select</button>
+    </form>
+  </div>
+
+  <!-- Dharamshala -->
+  <div class="listing-card">
+    <div class="listing-info">
+      <h3>Shri Prayag Dharamshala</h3>
+      <p class="type">Type: Dharamshala</p>
+      <p class="rating">⭐⭐⭐</p>
+      <ul>
+        <li>✔ Budget friendly</li>
+        <li>✔ Vegetarian meals</li>
+        <li>✔ Walking distance to temple</li>
+        <li>✔ Peaceful environment</li>
+      </ul>
+    </div>
+
+    <form method="POST" action="/booking/accommodation/select" class="listing-action">
+      <input type="hidden" name="name" value="Shri Prayag Dharamshala">
+      <input type="hidden" name="type" value="Dharamshala">
+      <input type="hidden" name="price" value="800">
+      <input type="hidden" name="distance" value="Walking distance to temple">
+      <button type="submit" class="primary-btn">Select</button>
+    </form>
+  </div>
+
+  <!-- Budget Hotel -->
+  <div class="listing-card">
+    <div class="listing-info">
+      <h3>Hotel Sangam Stay</h3>
+      <p class="type">Type: Budget Hotel</p>
+      <p class="rating">⭐⭐⭐⭐</p>
+      <ul>
+        <li>✔ Attached bathroom</li>
+        <li>✔ Hot water facility</li>
+        <li>✔ 3 km from main ghat</li>
+        <li>✔ Family-friendly rooms</li>
+      </ul>
+    </div>
+
+    <form method="POST" action="/booking/accommodation/select" class="listing-action">
+      <input type="hidden" name="name" value="Hotel Sangam Stay">
+      <input type="hidden" name="type" value="Budget Hotel">
+      <input type="hidden" name="price" value="2500">
+      <input type="hidden" name="distance" value="3 km from main ghat">
+      <button type="submit" class="primary-btn">Select</button>
+    </form>
+  </div>
+
+  <!-- Premium Hotel -->
+  <div class="listing-card">
+    <div class="listing-info">
+      <h3>Hotel Triveni Palace</h3>
+      <p class="type">Type: Premium Hotel</p>
+      <p class="rating">⭐⭐⭐⭐⭐</p>
+      <ul>
+        <li>✔ Luxury rooms</li>
+        <li>✔ Restaurant & room service</li>
+        <li>✔ Shuttle to ghats</li>
+        <li>✔ CCTV & 24x7 support</li>
+      </ul>
+    </div>
+
+    <form method="POST" action="/booking/accommodation/select" class="listing-action">
+      <input type="hidden" name="name" value="Hotel Triveni Palace">
+      <input type="hidden" name="type" value="Premium Hotel">
+      <input type="hidden" name="price" value="4200">
+      <input type="hidden" name="distance" value="Shuttle service available">
+      <button type="submit" class="primary-btn">Select</button>
+    </form>
+  </div>
+
+</section>
+
+<%- include("partials/footer") %>

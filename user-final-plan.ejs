@@ -1,0 +1,21 @@
+<section class="qr-section">
+  <h3>📲 Quick Access QR</h3>
+
+  
+  <% if (qrCode) { %>
+    <img src="<%= qrCode %>" alt="Smart Journey QR" />
+
+    <p class="small-text">
+      Scan this QR on your phone to view your full journey plan instantly
+      even in low network areas.
+    </p>
+  <% } else { %>
+    <p class="small-text">
+      QR already used. Showing plan directly.
+    </p>
+  <% } %>
+</section>
+
+<button onclick="alert('Scan QR using phone camera or Google Lens')">
+  Scan QR Code
+</button>

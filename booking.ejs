@@ -1,0 +1,78 @@
+<%- include("partials/header", { title: "Booking | Mahakumbh" }) %>
+
+<section class="page-hero">
+  <h1>Booking & Planning</h1>
+  <p>
+    Choose the services you need to plan your Mahakumbh visit smoothly and safely.
+  </p>
+</section>
+
+<section class="booking-options">
+  <div class="booking-grid">
+
+    <!-- Accommodation (Merged) -->
+    <div class="booking-card bg-accommodation">
+      <div class="card-overlay">
+        <h3>Accommodation</h3>
+        <p>
+          Choose from government tents, dharamshalas, and hotels based on
+          comfort, budget, and distance from ghats.
+        </p>
+        <a href="/booking/accommodation" class="secondary-btn">
+          Proceed
+        </a>
+      </div>
+    </div>
+
+    <!-- Temple Booking -->
+<div class="booking-card bg-temple">
+  <div class="card-overlay">
+    <h3>Temple Booking</h3>
+    <p>
+      Reserve temple visit slots, avoid peak crowd timings,
+      and plan darshan smoothly.
+    </p>
+    <a href="/booking/temples" class="secondary-btn">
+      Proceed
+    </a>
+  </div>
+</div>
+
+    <!-- Shahi Snan -->
+    <div class="booking-card bg-snan">
+      <div class="card-overlay">
+        <h3>Shahi Snan Planning</h3>
+        <p>
+          Select ghats, snan type, preferred slots, and crowd-friendly timings
+          with guided safety.
+        </p>
+        <a href="/booking/ghats" class="secondary-btn">
+          Proceed
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="booking-note">
+  <p>
+    Note: This platform provides planning and booking assistance.
+    Final confirmations depend on official authorities and availability.
+  </p>
+</section>
+
+<div class="center-btn">
+<form action="/user/plan" method="POST" class="center-btn">
+  <input type="hidden" name="name" value="Kunal Dongare">
+  <input type="hidden" name="fromCity" value="Pune">
+  <button type="submit" class="primary-btn">
+    View My Smart Journey Plan
+  </button>
+</form>
+
+</div>
+
+
+
+<%- include("partials/footer") %>

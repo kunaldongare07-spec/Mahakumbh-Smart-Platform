@@ -1,0 +1,78 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6f8;
+}
+
+/* SIDEBAR */
+.admin-sidebar {
+  width: 240px;
+  background: #1e2a3a;
+  color: #fff;
+  padding: 20px;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar li {
+  margin-bottom: 12px;
+}
+
+.admin-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* CONTENT */
+.admin-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* CARDS */
+.admin-card {
+  background: #fff7e6;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.admin-card h3 {
+  margin-bottom: 15px;
+  border-left: 4px solid #d97c30;
+  padding-left: 10px;
+}
+
+.admin-card input,
+.admin-card select,
+.admin-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* HIGHLIGHTS */
+.admin-card.highlight {
+  background: #fff7e6;
+  border-left: 5px solid #ff9800;
+}
+
+.admin-card.system {
+  background: #eef3f7;
+}

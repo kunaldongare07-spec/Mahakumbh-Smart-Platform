@@ -1,0 +1,132 @@
+<%- include("partials/header", { title: "Temple Darshan Booking" }) %>
+
+<section class="page-hero temple-bg">
+  <h1>🛕 Temple Darshan Booking</h1>
+  <p>Select a temple and preferred darshan time slot for a smooth experience.</p>
+</section>
+
+<section class="listing-section">
+  <div class="listing-grid">
+
+    <!-- ================= TEMPLE 1 ================= -->
+    <div class="listing-card">
+      <h3>Bade Hanuman Ji Mandir</h3>
+      <p class="rating">⭐ 4.8 / 5</p>
+      <span class="tag medium">Moderate Crowd</span>
+
+      <ul>
+        <li>Highly revered temple</li>
+        <li>Elder-friendly access</li>
+        <li>Special Tuesday darshan</li>
+        <li>Well-managed queues</li>
+      </ul>
+
+      <form method="POST" action="/booking/temples/select">
+        <input type="hidden" name="templeName" value="Bade Hanuman Ji Mandir">
+        <input type="hidden" name="rating" value="4.8">
+        <input type="hidden" name="darshanType" value="Regular Darshan">
+
+        <label>Preferred Darshan Time Slot</label>
+        <select name="timeSlot" required>
+          <option value="">Choose Time Slot</option>
+          <option>05:00 AM – 06:00 AM (Mangala Aarti)</option>
+          <option>06:00 AM – 07:00 AM</option>
+          <option>07:00 AM – 08:00 AM</option>
+          <option>08:00 AM – 09:00 AM</option>
+          <option>10:00 AM – 11:00 AM</option>
+          <option>12:00 PM – 01:00 PM</option>
+          <option>04:00 PM – 05:00 PM</option>
+          <option>06:00 PM – 07:00 PM (Evening Aarti)</option>
+        </select>
+
+        <button type="submit" class="primary-btn">
+          Select Temple
+        </button>
+      </form>
+    </div>
+
+    <!-- ================= TEMPLE 2 ================= -->
+    <div class="listing-card">
+      <h3>Alopi Devi Mandir</h3>
+      <p class="rating">⭐ 4.6 / 5</p>
+      <span class="tag low">Low Crowd</span>
+
+      <ul>
+        <li>Shakti Peeth</li>
+        <li>Peaceful environment</li>
+        <li>Ideal for families</li>
+        <li>Morning darshan recommended</li>
+      </ul>
+
+      <form method="POST" action="/booking/temples/select">
+        <input type="hidden" name="templeName" value="Alopi Devi Mandir">
+        <input type="hidden" name="rating" value="4.6">
+        <input type="hidden" name="darshanType" value="Shakti Darshan">
+
+        <label>Preferred Darshan Time Slot</label>
+        <select name="timeSlot" required>
+          <option value="">Choose Time Slot</option>
+          <option>05:00 AM – 06:00 AM</option>
+          <option>06:00 AM – 07:00 AM</option>
+          <option>07:00 AM – 08:00 AM</option>
+          <option>08:00 AM – 09:00 AM</option>
+          <option>10:00 AM – 11:00 AM</option>
+          <option>12:00 PM – 01:00 PM</option>
+          <option>04:00 PM – 05:00 PM</option>
+          <option>06:00 PM – 07:00 PM</option>
+        </select>
+
+        <button type="submit" class="primary-btn">
+          Select Temple
+        </button>
+      </form>
+    </div>
+
+    <!-- ================= TEMPLE 3 ================= -->
+    <div class="listing-card">
+      <h3>Akshayvat Temple</h3>
+      <p class="rating">⭐ 4.4 / 5</p>
+      <span class="tag low">Low Crowd</span>
+
+      <ul>
+        <li>Ancient sacred tree</li>
+        <li>High spiritual importance</li>
+        <li>Calm surroundings</li>
+        <li>Evenings are peaceful</li>
+      </ul>
+
+      <form method="POST" action="/booking/temples/select">
+        <input type="hidden" name="templeName" value="Akshayvat Temple">
+        <input type="hidden" name="rating" value="4.4">
+        <input type="hidden" name="darshanType" value="Special Darshan">
+
+        <label>Preferred Darshan Time Slot</label>
+        <select name="timeSlot" required>
+          <option value="">Choose Time Slot</option>
+          <option>05:00 AM – 06:00 AM</option>
+          <option>06:00 AM – 07:00 AM</option>
+          <option>07:00 AM – 08:00 AM</option>
+          <option>08:00 AM – 09:00 AM</option>
+          <option>10:00 AM – 11:00 AM</option>
+          <option>12:00 PM – 01:00 PM</option>
+          <option>04:00 PM – 05:00 PM</option>
+          <option>06:00 PM – 07:00 PM</option>
+        </select>
+
+        <button type="submit" class="primary-btn">
+          Select Temple
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<section class="booking-note">
+  <p>
+    ⏰ Time slots help manage crowd flow efficiently.
+    Please arrive 15–20 minutes early for a smooth darshan.
+  </p>
+</section>
+
+<%- include("partials/footer") %>

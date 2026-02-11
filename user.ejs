@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Panel</title>
+  <link rel="stylesheet" href="/css/user.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+<div class="dashboard">
+
+  <!-- HEADER -->
+  <header class="dashboard-header">
+    <h1>Your Mahakumbh Smart Journey Dashboard</h1>
+    <p>Personalized planning based on your preferences & crowd advisories</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="dashboard-body">
+
+    <!-- LEFT SECTION -->
+    <div class="left-panel">
+
+      <!-- USER BASIC DETAILS -->
+      <div class="card">
+        <h2>🧍 User Details</h2>
+
+
+       <input id="fullName" type="text" placeholder="Full Name">
+       <input id="age" type="number" placeholder="Age">
+
+
+        <select>
+          <option>Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+
+        <input id="fromCity" type="text" placeholder="From City">
+        <input 
+          id="visitDate"
+          type="date"
+          placeholder="Visiting Dates "
+        >
+       
+
+
+        <select id="groupType">
+          <option value="">Group Type</option>
+          <option>Solo</option>
+          <option>Family</option>
+          <option>Group</option>
+        </select>
+
+        <input id="peopleCount" type="number" placeholder="Number of People">
+
+            <select id="arrivalMode">
+      <option value="">Arrival Mode</option>
+      <option>Train</option>
+      <option>Bus</option>
+      <option>Private Car</option>
+      <option>Flight</option>
+      <option>Not Decided</option>
+    </select>
+
+    <select id="arrivalTime">
+      <option value="">Expected Arrival Time</option>
+      <option>Early Morning (4–7 AM)</option>
+      <option>Morning (7–11 AM)</option>
+      <option>Afternoon</option>
+      <option>Evening / Night</option>
+    </select>
+
+    <select id="comfortLevel">
+      <option value="">Accommodation Comfort Preference</option>
+      <option>Basic</option>
+      <option>Moderate</option>
+      <option>Comfortable</option>
+      <option>No Preference</option>
+    </select>
+
+    <select id="walkingAbility">
+      <option value="">Walking Tolerance</option>
+      <option>Can walk long distances</option>
+      <option>Prefer short walking</option>
+      <option>Need vehicle assistance</option>
+    </select>
+
+    <select id="medicalCondition">
+      <option value="">Medical Consideration</option>
+      <option>None</option>
+      <option>Regular Medication</option>
+      <option>Heart / BP Concern</option>
+      <option>Diabetic</option>
+    </select>
+
+    <select id="helpAssistance">
+      <option value="">Need Volunteer Assistance?</option>
+      <option>Yes at Ghats</option>
+      <option>Yes during Travel</option>
+      <option>No</option>
+    </select>
+
+    <select id="preferredLanguage">
+      <option value="">Preferred Language</option>
+      <option>Hindi</option>
+      <option>Marathi</option>
+      <option>English</option>
+    </select>
+
+      </div>
+
+      <!-- SMART PREFERENCES -->
+      <div class="card">
+        <h2>🧠 Travel Preferences</h2>
+
+        <select>
+          <option>First Time Visiting?</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+
+        <select>
+          <option>Preferred Crowd Level</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>Doesn't Matter</option>
+        </select>
+
+        <select>
+          <option>Physical Support Needed</option>
+          <option>None</option>
+          <option>Elderly</option>
+          <option>Child Present</option>
+          <option>Disabled Assistance</option>
+        </select>
+
+        <select>
+          <option>Primary Visit Purpose</option>
+          <option>Religious</option>
+          <option>Spiritual</option>
+          <option>Cultural</option>
+          <option>Family</option>
+        </select>
+
+        <select>
+          <option>Preferred Time of Day</option>
+          <option>Early Morning</option>
+          <option>Daytime</option>
+          <option>Evening</option>
+        </select>
+
+        <input type="tel" placeholder="Emergency Contact Number">
+
+        <select>
+          <option>Food Preference</option>
+          <option>Satvik</option>
+          <option>Regular</option>
+          <option>Medical Diet</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="right-panel">
+      <img src="/images/ghat.jpg" alt="Mahakumbh Ghat">
+      <p>Mahakumbh — a journey where faith flows stronger than the rivers.”</p>
+
+      <img src="/images/boat.jpg" alt="Mahakumbh Ghat">
+      <p>“India’s greatest spiritual congregation, planned for your safety and comfort.”</p>
+
+      <img src="/images/people.jpg" alt="Mahakumbh Ghat">
+      <p>Mahakumbh is the largest peaceful human gathering on Earth, visible even from space during peak days.</p>
+    </div>
+
+  </div>
+
+  <!-- SELECTED SERVICES -->
+  <div class="services-section">
+    <h2>✅ Your Selected Services</h2>
+
+    <div class="service-cards">
+    <div class="service-card">Basic Accommodation</div>
+    <div class="service-card">Temple Booking </div>
+    <div class="service-card">Shahi Snan Planning</div>
+
+    </div>
+  </div>
+
+  <!-- ACTION BUTTONS -->
+  <div class="actions">
+    <button type="button" id="generatePlanBtn" class="primary-btn">
+  Generate Smart Journey Plan
+</button>
+
+
+    <button class="secondary-btn">Print Smart Plan</button>
+  </div>
+
+  <p class="note">
+  This plan is generated using your preferences and general crowd advisories.
+</p>
+
+  <div id="smartPlanResult" class="plan-result hidden">
+  <h2>🧠 Your Smart Journey Plan</h2>
+  <div id="planContent"></div>
+</div>
+
+
+</div>
+
+</body>
+</html>
+<script src="/js/user.js"></script>
+
+<%- include('partials/footer') %>

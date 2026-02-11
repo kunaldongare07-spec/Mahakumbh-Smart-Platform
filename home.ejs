@@ -1,0 +1,109 @@
+<%- include("partials/header", { title: "Home | Mahakumbh" }) %>
+
+<!-- HERO -->
+<section class="hero hero-image">
+  <div class="hero-overlay">
+    <h1>Mahakumbh Smart Assistance Platform</h1>
+    <p>Safe • Simple • Crowd-Aware Travel Guidance</p>
+    <a href="/user" class="primary-btn">Start Planning</a>
+  </div>
+</section>
+
+
+<!-- ABOUT MAHAKUMBH -->
+<section class="info">
+  <h2>What is Mahakumbh?</h2>
+  <p>
+    Mahakumbh is one of the largest spiritual gatherings in the world,
+    held at sacred river sites. Millions of devotees come together
+    for faith, tradition, and spiritual upliftment.
+  </p>
+</section>
+
+<section class="how-it-works">
+  <h2>How This Platform Helps You</h2>
+
+  <div class="how-grid">
+    <div class="how-card">
+      <h3>1. Share Your Details</h3>
+      <p>Tell us your age, city, visit date, and preferences.</p>
+    </div>
+
+    <div class="how-card">
+      <h3>2. Admin Monitors Crowd</h3>
+      <p>Authorities update crowd levels and safe zones.</p>
+    </div>
+
+    <div class="how-card">
+      <h3>3. Get Your Safe Plan</h3>
+      <p>Receive a personalized, crowd-aware journey plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT SPOTS -->
+<section class="spots">
+  <h2>Important Locations</h2>
+
+  <div class="spot-grid">
+    <div class="spot-card">
+      <img src="/images/sangam.jpg" alt="Triveni Sangam">
+      <h3>Triveni Sangam</h3>
+      <p>The sacred confluence of holy rivers.</p>
+    </div>
+
+    <div class="spot-card">
+      <img src="/images/ghats.jpg" alt="Bathing Ghats">
+      <h3>Main Ghats</h3>
+      <p>Designated bathing areas for devotees.</p>
+    </div>
+
+    <div class="spot-card">
+      <img src="/images/akhara.jpg" alt="Akhara Zone">
+      <h3>Akhara Zones</h3>
+      <p>Spiritual centers of saints and akharas.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY PLATFORM -->
+<section class="why-platform">
+  <h2>Why Use This Platform?</h2>
+
+  <div class="why-grid">
+    <div class="why-card">Crowd-aware travel planning</div>
+    <div class="why-card">Elder-friendly guidance</div>
+    <div class="why-card">Admin monitored safety routes</div>
+  </div>
+</section>
+
+<!-- ADVISORY PREVIEW -->
+<section class="advisory">
+  <h2>Current Crowd Advisory</h2>
+
+  <p>
+    <strong>Overall Crowd Level:</strong>
+    <%= adminData.globalCrowd %>
+  </p>
+
+  <p>
+    <strong>Best Time to Visit:</strong>
+    <%= adminData.timeAdvisory?.bestTime || "Not updated by admin yet" %>
+  </p>
+
+  <p>
+    <strong>Time to Avoid:</strong>
+    <%= adminData.timeAdvisory?.avoidTime || "No restriction" %>
+  </p>
+
+  <p class="note">
+    This advisory is updated in real-time by administrators for crowd safety.
+  </p>
+</section>
+
+<section class="home-cta">
+  <a href="/user" class="primary-btn">Plan My Visit Now</a>
+</section>
+
+<%- include("partials/footer") %>

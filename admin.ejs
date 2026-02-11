@@ -1,0 +1,166 @@
+<%- include('partials/header') %>
+
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li><a href="#global">Global Crowd</a></li>
+      <li><a href="#time">Time Advisory</a></li>
+      <li><a href="#routes">Routes</a></li>
+      <li><a href="#temples">Temples</a></li>
+      <li><a href="#ghats">Ghats</a></li>
+      <li><a href="#notice">Admin Notice</a></li>
+      <li><a href="#system">System & ML</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-content">
+
+    <h1>Mahakumbh Admin Control Room</h1>
+    <p class="subtitle">Manage crowd, routes, ghats, temples & safety advisories</p>
+
+    <!-- 1. GLOBAL CROWD -->
+    <section id="global" class="admin-card">
+      <h3>🔴 Global Crowd Status</h3>
+
+      <p>
+        Current Value:
+        <strong><%= adminData ? adminData.globalCrowd : "Not Set" %></strong>
+      </p>
+
+      <form action="/admin/update" method="POST">
+        <select name="globalCrowd">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+        <button class="primary-btn" type="submit">
+          Update Crowd Status
+        </button>
+      </form>
+    </section>
+
+    <!-- 2. TIME ADVISORY -->
+    <section id="time" class="admin-card">
+      <h3>⏰ Time & Day Advisory</h3>
+
+      <form action="/admin/update-time" method="POST">
+        <label>Best Visiting Time</label>
+        <input
+          type="text"
+          name="bestTime"
+          placeholder="e.g. 5–8 AM"
+          value="<%= adminData?.timeAdvisory?.bestTime || "" %>"
+        />
+
+        <label>Time to Avoid</label>
+        <input
+          type="text"
+          name="avoidTime"
+          placeholder="e.g. 12–4 PM"
+          value="<%= adminData?.timeAdvisory?.avoidTime || "" %>"
+        />
+
+        <button class="primary-btn" type="submit">
+          Update Time Advisory
+        </button>
+      </form>
+    </section>
+
+    <!-- 3. ROUTE PRIORITY -->
+    <section id="routes" class="admin-card">
+      <h3>🛣️ Route Priority Management</h3>
+
+      <form action="/admin/update-routes" method="POST">
+        <% adminData?.routesPriority?.forEach((route, index) => { %>
+          <div class="priority-row">
+            <span><%= route.name %></span>
+
+            <select name="priority_<%= index %>">
+              <% for (let i = 1; i <= 5; i++) { %>
+                <option value="<%= i %>" <%= route.priority === i ? "selected" : "" %>>
+                  <%= i %>
+                </option>
+              <% } %>
+            </select>
+          </div>
+        <% }) %>
+
+        <button class="primary-btn" type="submit">
+          Update Route Priority
+        </button>
+      </form>
+    </section>
+
+    <!-- 4. TEMPLE PRIORITY -->
+    <section id="temples" class="admin-card">
+      <h3>🛕 Temple Visit Priority</h3>
+
+      <form action="/admin/update-temples" method="POST">
+        <% adminData?.templePriority?.forEach((temple, index) => { %>
+          <div class="priority-row">
+            <span><%= temple.name %></span>
+
+            <select name="priority_<%= index %>">
+              <% for (let i = 1; i <= 5; i++) { %>
+                <option value="<%= i %>" <%= temple.priority === i ? "selected" : "" %>>
+                  <%= i %>
+                </option>
+              <% } %>
+            </select>
+          </div>
+        <% }) %>
+
+        <button class="primary-btn" type="submit">
+          Update Temple Priority
+        </button>
+      </form>
+    </section>
+
+    <!-- 5. GHAT PRIORITY -->
+    <section id="ghats" class="admin-card">
+      <h3>🌊 Ghat Priority & Suitability</h3>
+
+      <form action="/admin/update-ghats" method="POST">
+        <% adminData?.ghatPriority?.forEach((ghat, index) => { %>
+          <div class="priority-row">
+            <span><%= ghat.name %> (<%= ghat.suitableFor %>)</span>
+
+            <select name="priority_<%= index %>">
+              <% for (let i = 1; i <= 5; i++) { %>
+                <option value="<%= i %>" <%= ghat.priority === i ? "selected" : "" %>>
+                  <%= i %>
+                </option>
+              <% } %>
+            </select>
+          </div>
+        <% }) %>
+
+        <button class="primary-btn" type="submit">
+          Update Ghat Priority
+        </button>
+      </form>
+    </section>
+
+    <!-- 6. ADMIN NOTICE -->
+    <section id="notice" class="admin-card highlight">
+      <h3>📢 Admin Notice / Emergency Broadcast</h3>
+      <textarea placeholder="Message to show to all users"></textarea>
+    </section>
+
+    <!-- 7. SYSTEM / ML -->
+    <section id="system" class="admin-card system">
+      <h3>📊 System & Integrations</h3>
+      <p>ML Crowd Detection: <strong>Pending Integration</strong></p>
+      <p>Live Maps: <strong>Pending Integration</strong></p>
+      <p>CCTV Feeds: <strong>Planned</strong></p>
+    </section>
+
+  </main>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,100 @@
+<%- include("partials/header", { title: "Smart Journey Plan" }) %>
+
+<section class="page-hero">
+  <h1>Your Ultimate Smart Mahakumbh Journey Plan</h1>
+  <p>
+    Personalized, printable and generated using your preferences
+    along with live administrative advisories.
+  </p>
+</section>
+
+<section class="plan-summary">
+
+  <!-- USER DETAILS -->
+  <section class="summary-card">
+    <h3>👤 Visitor Details</h3>
+    <p><strong>Name:</strong> <%= user?.name || "Not Provided" %></p>
+    <p><strong>Age / Gender:</strong> <%= user?.age || 21 %> / <%= user?.gender || "Male" %></p>
+    <p><strong>From City:</strong> <%= user?.fromCity || "Nashik" %></p>
+    <p><strong>Visit Date:</strong> <%= user?.travelDate || "Not specified" %></p>
+  </section>
+
+  <!-- ACCOMMODATION -->
+  <section class="summary-card">
+    <h3>🛏️ Accommodation Plan</h3>
+    <% if (accommodation) { %>
+      <p><strong>Name:</strong> <%= accommodation.name %></p>
+      <p><strong>Type:</strong> <%= accommodation.type %></p>
+      <p><strong>Price:</strong> ₹<%= accommodation.price %> / day</p>
+      <p><strong>Distance:</strong> <%= accommodation.distance %></p>
+    <% } else { %>
+      <p>No accommodation selected.</p>
+    <% } %>
+  </section>
+
+  <!-- TEMPLE -->
+  <section class="summary-card">
+    <h3>🛕 Temple Darshan Plan</h3>
+    <% if (temple) { %>
+      <p><strong>Temple:</strong> <%= temple.name %></p>
+      <p><strong>Darshan Type:</strong> <%= temple.type || "Regular" %></p>
+      <p><strong>Preferred Time Slot:</strong> <%= temple.time || "Not specified" %></p>
+    <% } else { %>
+      <p>No temple selected.</p>
+    <% } %>
+  </section>
+
+  <!-- SHAHI SNAN -->
+  <section class="summary-card">
+    <h3>🌊 Shahi Snan Plan</h3>
+    <% if (ghat) { %>
+      <p><strong>Ghat:</strong> <%= ghat.name %></p>
+      <p><strong>Snan Type:</strong> <%= ghat.snanType || "Normal Snan" %></p>
+      <p><strong>Time Slot:</strong> <%= ghat.timeSlot %></p>
+      <p><strong>Expected Crowd:</strong> <%= ghat.crowdLevel %></p>
+    <% } else { %>
+      <p>No Shahi Snan ghat selected.</p>
+    <% } %>
+  </section>
+
+  <!-- ADMIN ADVISORY -->
+  <section class="summary-card warning">
+    <h3>📢 Live Admin Advisory</h3>
+    <p><strong>Overall Crowd Level:</strong> <%= user?.crowdLevel || "Medium" %></p>
+    <p><strong>Recommended Visit Time:</strong> <%= user?.timeAdvice || "Early Morning" %></p>
+    <p><strong>Route Guidance:</strong> <%= user?.routeAdvice || "Follow standard routes" %></p>
+    <p><strong>Note:</strong> <%= user?.adminNote || "Follow official instructions." %></p>
+  </section>
+
+  <!-- ROUTE QR -->
+  <% if (routeQR) { %>
+  <section class="summary-card center">
+    <h3>📍 Smart Navigation Route</h3>
+    <p>Scan this QR code to open your full route in Google Maps</p>
+
+    <img
+      src="<%= routeQR %>"
+      alt="Route QR Code"
+      style="width:140px; height:140px; margin:15px auto;"
+    >
+
+    <p class="small-text">
+      Accommodation → Temple → Shahi Snan Ghat
+    </p>
+
+    <a href="<%= routeUrl %>" target="_blank" class="secondary-btn">
+      Open Route on Map
+    </a>
+  </section>
+  <% } %>
+
+  <!-- PRINT -->
+  <div class="center">
+    <button onclick="window.print()" class="primary-btn">
+      🖨 Print / Save This Plan
+    </button>
+  </div>
+
+</section>
+
+<%- include("partials/footer") %>

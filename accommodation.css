@@ -1,0 +1,26 @@
+.stay-card {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.stay-card img {
+  width: 220px;
+  object-fit: cover;
+}
+
+.stay-info {
+  padding: 16px;
+}
+
+.select-btn {
+  background: #d9822b;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}

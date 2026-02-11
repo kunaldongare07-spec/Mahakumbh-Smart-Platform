@@ -1,0 +1,132 @@
+<%- include("partials/header", { title: "Shahi Snan Booking" }) %>
+
+<section class="page-hero ghat-bg">
+  <h1>🌊 Shahi Snan Ghat Selection</h1>
+  <p>Select ghat and preferred Shahi Snan time slot</p>
+</section>
+
+<section class="listing-section">
+  <div class="listing-grid">
+
+    <!-- ================= GHAT 1 ================= -->
+    <div class="listing-card">
+      <h3>Triveni Ghat</h3>
+      <p class="rating">⭐ 4.9 / 5</p>
+      <span class="tag high">High Crowd</span>
+
+      <ul>
+        <li>Most sacred Sangam</li>
+        <li>Primary Shahi Snan ghat</li>
+        <li>Heavy rush on auspicious days</li>
+        <li>Strict crowd control</li>
+      </ul>
+
+      <form method="POST" action="/booking/ghats/select">
+        <input type="hidden" name="ghatName" value="Triveni Ghat">
+        <input type="hidden" name="snanType" value="Shahi Snan">
+        <input type="hidden" name="crowdLevel" value="High">
+
+        <label>Select Shahi Snan Time Slot</label>
+        <select name="timeSlot" required>
+          <option value="">Choose Time Slot</option>
+          <option>03:30 AM – 04:30 AM (Brahma Muhurat)</option>
+          <option>04:30 AM – 05:30 AM</option>
+          <option>05:30 AM – 06:30 AM</option>
+          <option>06:30 AM – 07:30 AM</option>
+          <option>08:00 AM – 09:00 AM</option>
+          <option>10:00 AM – 11:00 AM</option>
+          <option>02:00 PM – 03:00 PM</option>
+          <option>04:00 PM – 05:00 PM</option>
+        </select>
+
+        <button type="submit" class="primary-btn">
+          Select Ghat
+        </button>
+      </form>
+    </div>
+
+    <!-- ================= GHAT 2 ================= -->
+    <div class="listing-card">
+      <h3>Araili Ghat</h3>
+      <p class="rating">⭐ 4.6 / 5</p>
+      <span class="tag medium">Medium Crowd</span>
+
+      <ul>
+        <li>Family-friendly ghat</li>
+        <li>Better walking access</li>
+        <li>Balanced crowd flow</li>
+        <li>Recommended for elders</li>
+      </ul>
+
+      <form method="POST" action="/booking/ghats/select">
+        <input type="hidden" name="ghatName" value="Araili Ghat">
+        <input type="hidden" name="snanType" value="Shahi Snan">
+        <input type="hidden" name="crowdLevel" value="Medium">
+
+        <label>Select Shahi Snan Time Slot</label>
+        <select name="timeSlot" required>
+          <option value="">Choose Time Slot</option>
+          <option>03:30 AM – 04:30 AM</option>
+          <option>04:30 AM – 05:30 AM</option>
+          <option>05:30 AM – 06:30 AM</option>
+          <option>06:30 AM – 07:30 AM</option>
+          <option>08:00 AM – 09:00 AM</option>
+          <option>10:00 AM – 11:00 AM</option>
+          <option>02:00 PM – 03:00 PM</option>
+          <option>04:00 PM – 05:00 PM</option>
+        </select>
+
+        <button type="submit" class="primary-btn">
+          Select Ghat
+        </button>
+      </form>
+    </div>
+
+    <!-- ================= GHAT 3 ================= -->
+    <div class="listing-card">
+      <h3>Phaphamau Ghat</h3>
+      <p class="rating">⭐ 4.4 / 5</p>
+      <span class="tag low">Low Crowd</span>
+
+      <ul>
+        <li>Spacious & calm ghat</li>
+        <li>Best for senior citizens</li>
+        <li>Lower congestion</li>
+        <li>Safe entry/exit points</li>
+      </ul>
+
+      <form method="POST" action="/booking/ghats/select">
+        <input type="hidden" name="ghatName" value="Phaphamau Ghat">
+        <input type="hidden" name="snanType" value="Shahi Snan">
+        <input type="hidden" name="crowdLevel" value="Low">
+
+        <label>Select Shahi Snan Time Slot</label>
+        <select name="timeSlot" required>
+          <option value="">Choose Time Slot</option>
+          <option>03:30 AM – 04:30 AM</option>
+          <option>04:30 AM – 05:30 AM</option>
+          <option>05:30 AM – 06:30 AM</option>
+          <option>06:30 AM – 07:30 AM</option>
+          <option>08:00 AM – 09:00 AM</option>
+          <option>10:00 AM – 11:00 AM</option>
+          <option>02:00 PM – 03:00 PM</option>
+          <option>04:00 PM – 05:00 PM</option>
+        </select>
+
+        <button type="submit" class="primary-btn">
+          Select Ghat
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<section class="booking-note">
+  <p>
+    ⚠ Crowd levels vary on auspicious dates.  
+    Please arrive 30 minutes before your selected slot and follow official advisories.
+  </p>
+</section>
+
+<%- include("partials/footer") %>

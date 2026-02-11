@@ -1,0 +1,114 @@
+<%- include("partials/header", { title }) %>
+
+<%
+  // ---- SAFETY DEFAULTS (CRITICAL FIX) ----
+  const safeRouteQR = typeof routeQR !== "undefined" ? routeQR : null;
+  const safeRouteUrl = typeof routeUrl !== "undefined" ? routeUrl : null;
+%>
+
+<section class="summary-page">
+
+  <h1 class="center">🙏 My Smart Mahakumbh Journey Plan</h1>
+  <p class="center subtitle">
+    Personalized, printable & offline-friendly visit summary
+  </p>
+
+  <!-- ================= VISITOR DETAILS ================= -->
+  <section class="summary-card">
+    <h2>👤 Visitor Details</h2>
+
+    <p><strong>Name:</strong> <%= user?.name || "Not provided" %></p>
+
+    <p>
+      <strong>Age / Gender:</strong>
+      <%= user?.age || 21 %> / <%= user?.gender || "Male" %>
+    </p>
+
+    <p>
+      <strong>From:</strong>
+      <%= user?.fromCity || "Nashik" %>
+    </p>
+
+    <p>
+      <strong>Visit Date:</strong>
+      <%= user?.travelDate || "Today" %>
+    </p>
+  </section>
+
+  <!-- ================= ACCOMMODATION ================= -->
+  <% if (accommodation) { %>
+  <section class="summary-card">
+    <h2>🏨 Accommodation Plan</h2>
+
+    <p><strong>Name:</strong> <%= accommodation.name || "N/A" %></p>
+    <p><strong>Type:</strong> <%= accommodation.type || "N/A" %></p>
+    <p><strong>Price:</strong> ₹<%= accommodation.price || "N/A" %> / night</p>
+    <p><strong>Distance:</strong> <%= accommodation.distance || "N/A" %></p>
+  </section>
+  <% } %>
+
+  <!-- ================= TEMPLE ================= -->
+  <% if (temple) { %>
+  <section class="summary-card">
+    <h2>🛕 Temple Visit Plan</h2>
+
+    <p><strong>Temple:</strong> <%= temple.templeName || temple.name %></p>
+    <p><strong>Darshan Type:</strong> <%= temple.darshanType || "Normal Darshan" %></p>
+    <p><strong>Preferred Time:</strong> <%= temple.timeSlot || "Morning" %></p>
+  </section>
+  <% } %>
+
+  <!-- ================= SHAHI SNAN ================= -->
+  <% if (ghat) { %>
+  <section class="summary-card">
+    <h2>🌊 Shahi Snan Plan</h2>
+
+    <p><strong>Ghat:</strong> <%= ghat.ghatName || ghat.name %></p>
+    <p><strong>Snan Type:</strong> <%= ghat.snanType || "Normal Snan" %></p>
+    <p><strong>Time Slot:</strong> <%= ghat.timeSlot || "As per advisory" %></p>
+    <p><strong>Crowd Level:</strong> <%= ghat.crowdLevel || "Moderate" %></p>
+  </section>
+  <% } %>
+
+  <!-- ================= ADVISORY ================= -->
+  <section class="summary-card warning">
+    <h2>⚠ Important Advisory</h2>
+    <ul>
+      <li>Follow official instructions at all times</li>
+      <li>Avoid peak hours unless advised</li>
+      <li>Reach ghats & temples early</li>
+      <li>Keep emergency helpline numbers handy</li>
+    </ul>
+  </section>
+
+  <!-- ================= ROUTE QR ================= -->
+  <% if (safeRouteQR) { %>
+  <section class="summary-card center">
+    <h2>📍 Your Travel Route</h2>
+
+    <p>Scan this QR to open your route in Google Maps</p>
+
+    <img
+      src="<%= safeRouteQR %>"
+      alt="Route QR Code"
+      style="width:140px; height:140px; margin:10px auto;"
+    >
+
+    <% if (safeRouteUrl) { %>
+    <a href="<%= safeRouteUrl %>" target="_blank" class="secondary-btn">
+      Open Route on Map
+    </a>
+    <% } %>
+  </section>
+  <% } %>
+
+  <!-- ================= PRINT ================= -->
+  <div class="center">
+    <button onclick="window.print()" class="primary-btn">
+      🖨 Print / Save This Plan
+    </button>
+  </div>
+
+</section>
+
+<%- include("partials/footer") %>
